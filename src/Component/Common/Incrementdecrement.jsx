@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const usecustom= (initialvalue=0)=>
+export const Usecustom= (initialvalue)=>
   {
     const [count,setcount]= useState(initialvalue);
 
@@ -19,13 +19,11 @@ const usecustom= (initialvalue=0)=>
       decrement,
       reset
     };
+} 
 
-
-};
-
-const IncrementDecrement = () => {
- const  counter1 = usecustom(0);
- const counter2 = usecustom(0);
+ const IncrementDecrement = () => {
+ const  counter1 =Usecustom(0);
+ const counter2 = Usecustom(0);
 
   return (
     <div className='container flex flex-col items-center justify-center bg-gray-400 space-y-4 p-4'>
@@ -53,3 +51,4 @@ const IncrementDecrement = () => {
 };
 
 export default IncrementDecrement;
+
