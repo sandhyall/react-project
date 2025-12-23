@@ -1,5 +1,5 @@
 import React from 'react';
-import { Incrementdecrement } from './Common/Incrementdecrement';
+import  Incrementdecrement  from './Common/Incrementdecrement';
 
 const Inc = () => {
   return (

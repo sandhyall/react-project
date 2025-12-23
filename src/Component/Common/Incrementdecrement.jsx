@@ -1,27 +1,55 @@
 import React, { useState } from 'react';
 
+const usecustom= (initialvalue=0)=>
+  {
+    const [count,setcount]= useState(initialvalue);
+
+    const increment=()=>{
+      setcount((count)=>count+1)
+    };
+     const decrement=()=>{
+      setcount((count)=>count>0?count-1:0)
+    };
+     const reset=()=>{
+      setcount(0);
+    };
+    return{
+      count,
+      increment,
+      decrement,
+      reset
+    };
+
+
+};
+
 const IncrementDecrement = () => {
-  const [count, setCount] = useState(0);
-  const [count2, setCount1] = useState(0);
+ const  counter1 = usecustom(0);
+ const counter2 = usecustom(0);
 
   return (
-    <div className='container flex flex-col items-center justify-center bg-gray-400 space-2'>
+    <div className='container flex flex-col items-center justify-center bg-gray-400 space-y-4 p-4'>
 
-      <h1 className='text-2xl font-bold'>{count}</h1>
+     
+      <h1 className='text-2xl font-bold'>{counter1.count}</h1>
       <div className='flex gap-4'>
-        <button className='px-6 py-3  text-black ' onClick={() => setCount(count > 0 ? count - 1 : 0)}>-</button>
-      <button onClick={() => setCount(0)}>Reset</button>
-      <button onClick={() => setCount(count + 1)}>+</button>
+        <button className='px-6 py-3 text-black' onClick={counter1.decrement}>-</button>
+        <button onClick={counter1.reset}>Reset</button>
+        <button className='px-6 py-3 text-black' onClick={counter1.increment}>+</button>
       </div>
      
-      <div>
-        <h1 className='text-2xl font-bold'>{count2}</h1>
-      <div className='flex gap-4'>
-        <button className='px-6 py-3  text-black ' onClick={() => setCount(count > 0 ? count - 1 : 0)}>-</button>
-      <button onClick={() => setCount1(0)}>Reset</button>
-      <button onClick={() => setCount1(count + 1)}>+</button>
-      </div>
+      
+      <div className=' items-center justify-center flex flex-col '>
+        <h1 className='text-2xl font-bold'>{counter2.count}</h1>
+        <div className='flex gap-4'>
+          <button className='px-6 py-3 text-black' onClick={counter2.decrement}>-</button>
+          <button onClick={counter2.reset}>Reset</button>
+          <button className='px-6 py-3 text-black' onClick={counter2.increment}>+</button>
+        </div>
       </div>
      
     </div>
-    
+  );
+};
+
+export default IncrementDecrement;
