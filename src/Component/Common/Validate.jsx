@@ -28,6 +28,19 @@ const validate = (form) => {
     
     errors.confirmPassword = 'Passwords do not match';
   }
+  if (!form.fullname.trim())
+     errors.fullname = "Full Name is required";
+  if (!form.address.trim())
+     errors.address = "Address is required";
+  if (!form.city.trim()) 
+    errors.city = "City is required";
+  if (!form.postcode.trim())
+     errors.postcode = "Post Code is required";
+  if (!form.country.trim()) 
+    errors.country = "Country is required";
+  if (!form.phone.trim()) 
+    errors.phone = "Phone Number is required";
+  
 
   return errors;
 };

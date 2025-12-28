@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Search from'./Search';
+
 
 const Navbar = () => {
   return (
@@ -27,6 +29,10 @@ const Navbar = () => {
           </Link>
         </div>
 
+        <div>
+       <Search/>
+      </div>
+
         
         <div className="flex gap-6">
           <Link
@@ -35,6 +41,16 @@ const Navbar = () => {
           >
             Form
           </Link>
+          
+
+           <Link
+            to="/Cart"
+            className="text-gray-700 font-medium hover:text-blue-600"
+          >
+            Cart
+          </Link>
+      
+
           <Link
             to="/signup"
             className="text-gray-700 font-medium hover:text-blue-600"
@@ -48,6 +64,7 @@ const Navbar = () => {
             Login
           </Link>
         </div>
+      
 
       </div>
     </nav>

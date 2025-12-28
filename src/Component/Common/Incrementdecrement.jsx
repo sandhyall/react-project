@@ -24,13 +24,13 @@ const IncrementDecrement = () => {
   const counter1 = Usecustom(0);
   const counter2 = Usecustom(0);
 
-  useEffect(() => {
-    console.log('Counter 1 value:', counter1.count);
-  }, [counter1.count]);
+  // useEffect(() => {
+  //   console.log('Counter 1 value:', counter1.count);
+  // }, [counter1.count]);
 
-  useEffect(() => {
-    console.log('Counter 2 value:', counter2.count);
-  }, [counter2.count]);
+  // useEffect(() => {
+  //   console.log('Counter 2 value:', counter2.count);
+  // }, [counter2.count]);
 
   
 
